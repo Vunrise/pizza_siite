@@ -83,6 +83,9 @@ a:hover {
         display: block;
         text-align: center;
     }
+    #pizzaimg {
+        width: 400px;
+    }
     .column {
         display: block;
     }
