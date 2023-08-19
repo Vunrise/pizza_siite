@@ -1,38 +1,71 @@
 #menutitle {
     text-align: center;
+    margin-top: 10%;
     margin-bottom: 70px;
-    font-size: 50px;
+    font-size: 170%;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 #title {
     text-align: center;
     font-family: Gill Sans, Verdana;
-	font-size: 50px;
+	font-size: 150%;
 	line-height: 14px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: bold;
     color:#e28871;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.fixed {
+    position: sticky;
+    top: 0;
+    padding-top: 1px;
+    background-color: #ffc591;
+    z-index: 2;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+hr {
+    height: 1;
+    border: none;
+    border-top: 1.5px solid #e28871;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 body {
     background-color: #ffc591;
     color: #ca7762;
     font-family: Courier New;
-    font-size: 30px;
+    font-size: 190%;
+    -webkit-transition: .5s;
+    transition: .5s;
   }
 
 #pizzaimg {
     width: 300px;
-    border-radius: 300px;
+    border-radius: 100%;
     box-shadow: 0 0 25px #5c2f39;
     margin: auto;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 #pizzadiv {
     display: flex;
     width: 80%;
     margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    color: #ca7762;
+    -webkit-transition: .5s;
+    transition: .5s;
+
 }
 
 .header1 {
@@ -46,6 +79,8 @@ a {
     font-family: Gill Sans, Verdana;
     font-size: 20px;
     margin-left: 3%;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 a:hover {
@@ -54,8 +89,10 @@ a:hover {
 }
 
 #return {
-    font-size: 18px;
+    font-size: 60%;
     color: #5c2f39b5;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 #bottom {
@@ -77,10 +114,128 @@ a:hover {
     text-align: center;
 }
 
-@media (max-width:1200px) {
+.darkmode {
+    text-align: center;
+    margin-top: 7rem;
+}
+
+#darkText {
+    font-size: 4rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    background: linear-gradient(to left, rgb(0, 115, 255), rgb(0, 76, 133));
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    border-radius: 1em;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    left: 10%;
+    bottom: 15%;
+    /* background: radial-gradient(at 0% 70%, #ffffff, 25%, #fbcd00); */
+    background: #ffbb00;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    border-radius: 50%;
+    width: 1.4em;
+    height: 1.4em;
+}
+
+input:checked + .slider {
+    background: #615e85;
+}
+
+input:checked + .slider::before {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    background: #615e85;
+    box-shadow: inset 0.5em -0.1em 0px 0px #ffffff;
+}
+
+.dark {
+    background-color: #1b1e29;
+    color: #ffffff;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.dark a {
+    color: #ffffff8a;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.dark #return {
+    color: #ffffff;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.dark .fixed {
+    background-color: #1b1e29;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.dark #title {
+    color: #ffffff;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.dark hr {
+    border-top: 1.5px solid #1bff0f;
+}
+
+.dark #pizzadiv {
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: #ffffff;
+    text-shadow: 0px 0px 5px rgb(255, 255, 255),
+        0px 0px 10px rgb(199, 255, 201),
+        0px 0px 15px rgb(139, 255, 143),
+        0px 0px 30px rgb(105, 255, 110),
+        0px 0px 70px rgba(41, 255, 34, 1);
+}
+
+.dark #pizzaimg {
+    -webkit-transition: .5s;
+    transition: .5s;
+    box-shadow: 0px 0px 5px rgb(255, 255, 255),
+    0px 0px 10px rgb(199, 255, 201),
+    0px 0px 15px rgb(139, 255, 143),
+    0px 0px 30px rgb(105, 255, 110),
+    0px 0px 70px rgba(41, 255, 34, 1);
+}
+
+@media screen and (max-width:1200px) {
     #pizzadiv{
         display: block;
         text-align: center;
+    }
+    #pizzaimg {
+        width: 400px;
     }
     .column {
         display: block;
