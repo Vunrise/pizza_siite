@@ -2,17 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Pizza time</title>
         <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3132/3132693.png"/>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <h1 id="title">Pizza time</h1>
-        <hr size="1" color="#e28871"/>
+        <div class="fixed">
+            <h1 id="title">Pizza time</h1>
+            <hr />
+        </div>
         <div id="pizzadiv">
             <h2 class="header1" id="b1">Лучшая</h2>
             <img src="https://img.mobigama.net/app/3777-good_pizza_great_pizza/1_good_pizza_great_pizza.png" id="pizzaimg">
             <h2 class="header1">Pizzza</h2>
+        </div>
+        <div class="darkmode">
+            <h2 id="darkText">Dark Mode</h2>
+            <label class="switch">
+                <input type="checkbox" id="btnDark">
+                <span class="slider"></span>
+            </label>
         </div>
         <p id="menutitle">Menu</p>
         <div class="column">
@@ -29,11 +39,13 @@
                 <img src="https://static.vecteezy.com/system/resources/previews/009/384/620/original/fresh-pizza-and-pizza-box-clipart-design-illustration-free-png.png" class="menu">
             <p>
         </div>
-        <hr size="1" color="#e28871"/>
-        <p><a href="https://t.me/vunrise" target="_blank">Telegram</a></p>
-        <p id="bottom">
-            <a href="#title" id="return">Вернуться наверх</a>
-        </p>
+        <hr />
+        <footer>
+            <p><a href="https://t.me/vunrise" target="_blank">Telegram</a></p>
+            <p id="bottom">
+                <a href="#title" id="return">Вернуться наверх</a>
+            </p>
+        </footer>
         <script src="script1.js"></script>
     </body>
 </html>
