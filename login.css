@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Andale Mono, monospace;
+    font-size: 20px;
+}
+
+.header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    padding: 1rem;
+    background: transparent;
+    backdrop-filter: blur(7px);
+}
+
+a {
+    text-decoration: none;
+}
+
+.navigation a:hover {  
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.291);
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.account a:hover {  
+    /* filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.291)); */
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.291);
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.navigation a {
+    border-radius: 5%;
+    padding: 0.5em;
+    color: #000000;
+}
+
+.navigation {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.account a {
+    border-radius: 10%;
+    padding: 0.5em;
+}
+
+.account {
+    display: flex;
+    justify-content: center;
+}
+
+.account svg {
+    fill: #000000;
+    font-size: 1.2rem;
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+    background-image: url("https://uhdwallpapers.org/uploads/converted/18/05/22/landscape-from-jiuzhaigou-valley-3840x2160_46864-mm-90.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    z-index: 98;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    color: #000000;
+    border-radius: 2%;
+}
+
+input[type="text"] {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+.form {
+    text-align: center;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+
+.form a {
+    color: #000000;
+}
+
+.form h2 {
+    margin: 1em 0;
+    padding: 0.5em 0.5em;
+}
+
+.email {
+    border: none;
+    border-bottom:1px solid #eee;
+    margin: 1em 0;
+    padding: 0.5em 0.5em 0.5em 0;
+    background: transparent;
+}
+
+.email::placeholder, .password::placeholder {
+    color: #9f9f9f;
+}
+
+.password {
+    border: none;
+    border-bottom:1px solid #eee;
+    margin: 1em 0;
+    padding: 0.5em 0.5em 0.5em 0;
+    background: transparent;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 0.8em;
+    height: 0.8em;
+    border: 0.14em solid currentColor;
+    border-radius: 0.15em;
+    /* transform: translateY(-0.075em); */
+}
+
+.lineForm {
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: center; */
+    margin: 3em 0;
+    padding: 0.5em 0.5em;
+}
+
+.space {
+    padding-right: 0.2rem;
+}
+
+.test {
+    /* border: 1px solid red; */
+    padding: 0;
+}
+
+.btnLogin {
+    border: none;
+    margin: 1em 0;
+    padding: 0.5em 0.5em;
+    background: transparent;
+}
+
+.signUp {
+    margin: 1em 0;
+    padding: 0.5em 0.5em;
+}
