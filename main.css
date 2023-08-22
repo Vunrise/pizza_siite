@@ -3,8 +3,6 @@
     margin-top: 10%;
     margin-bottom: 70px;
     font-size: 170%;
-    -webkit-transition: .5s;
-    transition: .5s;
 }
 
 #title {
@@ -16,35 +14,39 @@
 	letter-spacing: 2px;
 	font-weight: bold;
     color:#e28871;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
 .fixed {
     position: sticky;
     top: 0;
+    border-left: 0;
+    bottom: 0;
     padding-top: 1px;
     background-color: #ffc591;
     z-index: 2;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
 hr {
     height: 1;
     border: none;
     border-top: 1.5px solid #e28871;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: #ffc591;
     color: #ca7762;
     font-family: Courier New;
     font-size: 190%;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
   }
 
 #pizzaimg {
@@ -52,8 +54,8 @@ body {
     border-radius: 100%;
     box-shadow: 0 0 25px #5c2f39;
     margin: auto;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
 #pizzadiv {
@@ -63,8 +65,8 @@ body {
     padding-top: 3rem;
     padding-bottom: 2rem;
     color: #ca7762;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 
 }
 
@@ -79,8 +81,8 @@ a {
     font-family: Gill Sans, Verdana;
     font-size: 20px;
     margin-left: 3%;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
 a:hover {
@@ -88,11 +90,13 @@ a:hover {
     opacity: 50%;
 }
 
+html {scroll-behavior: smooth;}
+
 #return {
     font-size: 60%;
     color: #5c2f39b5;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
 #bottom {
@@ -100,14 +104,14 @@ a:hover {
 }
 
 .menu {
-    width: 60%;
-    margin: 60px;
+    width: 15rem;
     margin-top: 20px;
 }
 
 .column {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    /* justify-content: space-around; */
 }
 
 .column p {
@@ -120,7 +124,32 @@ a:hover {
 }
 
 #darkText {
-    font-size: 4rem;
+    font-size: 2em;
+    color: #ffffff;
+    animation: neon 5s linear infinite alternate;
+    text-shadow: 
+    0px 0px 5px rgb(203, 211, 255),
+    0px 0px 10px #9fb4ff,
+    0px 0px 15px rgb(119, 139, 255),
+    0px 0px 30px rgb(69, 106, 255),
+    0px 0px 70px rgb(44, 51, 255),
+    0px 0px 90px rgb(0, 55, 255);
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.dark #darkText {
+    color: transparent;
+    animation: neon 5s linear infinite alternate;
+    text-shadow: none;
+    -webkit-text-stroke: 2px rgb(0, 55, 255);
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+@keyframes neon {
+    from {filter: hue-rotate(0deg);}
+    to {filter: hue-rotate(360deg);}
 }
 
 .switch {
@@ -136,7 +165,11 @@ a:hover {
 }
 
 .slider {
-    background: linear-gradient(to left, rgb(0, 115, 255), rgb(0, 76, 133));
+    background-color: linear-gradient(to left, rgb(0, 115, 255), rgb(0, 76, 133));
+    background-position: center;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/003/617/634/small_2x/bright-blue-sky-background-with-clouds-free-vector.jpg");
+    background-size: cover;
+    box-shadow: inset 0 0 10px 0px #000000e3;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -153,8 +186,11 @@ a:hover {
     content: "";
     left: 10%;
     bottom: 15%;
-    /* background: radial-gradient(at 0% 70%, #ffffff, 25%, #fbcd00); */
-    background: #ffbb00;
+    /* background-size: contain;
+    background-image: url("https://e7.pngegg.com/pngimages/124/356/png-clipart-sunlight-sun-creative-orange-creative-artwork.png"); */
+    background-position: center;
+    background-color: #ffbb00;
+    box-shadow: inset 0 0 10px 0px #ffffffe3;
     -webkit-transition-duration: .5s;
     transition-duration: .5s;
     border-radius: 50%;
@@ -164,50 +200,82 @@ a:hover {
 
 input:checked + .slider {
     background: #615e85;
+    box-shadow: inset 0 0 10px 2px #000000e3;
+    background-size: cover;
+    background-image: url("https://media.istockphoto.com/id/1139914566/vector/pixel-art-night-starry-sky.jpg?s=612x612&w=0&k=20&c=mmZXai_adAprJAIGc5DZPTK3Hk9oze6X4fwf4MvI4Gw=");
 }
 
 input:checked + .slider::before {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
-    background: #615e85;
-    box-shadow: inset 0.5em -0.1em 0px 0px #ffffff;
+    /* background-color: transparent; */
+    /* box-shadow: inset 0.5em -0.1em 0px 0px #ffffff; */
+    background-image: url("https://images.freeimages.com/vhq/images/previews/c84/full-moon-clip-art-84132.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .dark {
     background-color: #1b1e29;
     color: #ffffffd0;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
-.dark a {
+.dark #telegram {
+    opacity: 100%;
+    text-decoration: none;
     color: #ffffffd0;
-    -webkit-transition: .5s;
-    transition: .5s;
-    text-shadow: 0px 0px 5px rgb(255, 255, 255),
-        0px 0px 10px rgb(199, 205, 255),
-        0px 0px 15px rgb(142, 159, 255),
-        0px 0px 30px rgb(40, 105, 255),
-        0px 0px 70px rgb(0, 81, 255);
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    text-shadow: 
+        0px 0px 10px rgb(0, 81, 255),
+        0px 0px 30px rgb(0, 81, 255);
+}
+
+.dark #telegram:hover, .dark #return:hover {
+    opacity: 100%;
+    text-decoration: none;
+    color:#ffffffd0;
+    text-shadow: 
+        0px 0px 10px #00ff0d,
+        0px 0px 30px #00ff0d;
 }
 
 .dark #return {
+    opacity: 100%;
+    text-decoration: none;
     color: #ffffffd0;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
     text-shadow: none;
+    /* scroll-behavior: smooth; */
 }
 
 .dark .fixed {
     background-color: #1b1e29;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
 }
 
 .dark #title {
     color: #fffffff0;
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    text-shadow: 0px 0px 5px rgb(255, 255, 255),
+    0px 0px 10px rgb(255, 245, 199),
+    0px 0px 15px rgb(255, 224, 139),
+    0px 0px 30px rgb(255, 225, 105),
+    0px 0px 70px rgb(255, 218, 34);
+}
+
+.dark #return:hover {
+    opacity: 100%;
+    text-decoration: none;
+    color:#ffffffd0;
+    text-shadow: 
+        0px 0px 10px #00ff0d,
+        0px 0px 30px #00ff0d;
 }
 
 .dark hr {
@@ -215,19 +283,16 @@ input:checked + .slider::before {
 }
 
 .dark #pizzadiv {
-    -webkit-transition: .5s;
-    transition: .5s;
+    animation: flicker 1.5s infinite alternate;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
     color: #ffffff;
-    text-shadow: 0px 0px 5px rgb(255, 255, 255),
-        0px 0px 10px rgb(199, 255, 201),
-        0px 0px 15px rgb(139, 255, 143),
-        0px 0px 30px rgb(105, 255, 110),
-        0px 0px 70px rgba(41, 255, 34, 1);
 }
 
 .dark #pizzaimg {
-    -webkit-transition: .5s;
-    transition: .5s;
+    animation: flicker 1.5s infinite alternate;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
     box-shadow: 0px 0px 5px rgb(255, 255, 255),
     0px 0px 10px rgb(199, 255, 201),
     0px 0px 15px rgb(139, 255, 143),
@@ -235,15 +300,116 @@ input:checked + .slider::before {
     0px 0px 70px rgba(41, 255, 34, 1);
 }
 
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0px 0px 5px rgb(255, 255, 255),
+        0px 0px 10px rgb(199, 255, 201),
+        0px 0px 15px rgb(139, 255, 143),
+        0px 0px 30px rgb(105, 255, 110),
+        0px 0px 70px rgba(41, 255, 34, 1);
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow:
+        0px 0px 1px rgb(255, 255, 255),
+        0px 0px 3px rgb(199, 255, 201),
+        0px 0px 5px rgb(139, 255, 143),
+        0px 0px 10px rgb(105, 255, 110),
+        0px 0px 20px rgba(41, 255, 34, 1);
+    }    
+  }
+
+.header {
+    width: auto;
+    height: auto;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    padding: 1rem;
+}
+
+.navigation {
+    display: inline-flex;
+    gap: 1rem;
+
+}
+
+.account svg {
+    font-size: 1.4rem;
+}
+
+.dark .account a {
+    opacity: 100%;
+    fill: #ffffff;
+    filter: drop-shadow(0 0 5px rgb(255, 61, 252))
+    drop-shadow(0 0 15px rgb(255, 42, 205));
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.dark .navigation a {
+    text-decoration: none;
+    opacity: 100%;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgb(255, 61, 252),
+    0 0 15px rgb(255, 42, 205);
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.dark .account a:hover {
+    opacity: 100%;
+    text-decoration: none;
+    fill: #ffffff;
+    filter: drop-shadow(0px 0px 5px rgb(47, 255, 0))
+    drop-shadow(0px 0px 15px rgb(47, 255, 0));
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.dark .navigation a:hover {
+    opacity: 100%;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgb(47, 255, 0),
+    0 0 15px rgb(47, 255, 0);
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
 @media screen and (max-width:1200px) {
     #pizzadiv{
         display: block;
         text-align: center;
+        width: auto;
     }
     .column {
         display: block;
     }
     .column p {
         text-align: center;
+    }
+}
+
+@media screen and (max-width:800px) {
+    #pizzadiv{
+        display: block;
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 0.5em;
+        width: 12em;
+        height: 12em;
+    }
+    .header1 {
+        font-size: 3em;
+    }
+    #pizzaimg {
+        width: 5em;
     }
 }
